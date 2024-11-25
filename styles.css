@@ -1,0 +1,291 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+}
+
+/* Header */
+header {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 35px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    letter-spacing: 2px; /* Áp dụng giãn cách chữ cho toàn bộ văn bản trong header */
+}
+
+h1 {
+    margin: 0;
+    font-size: 2em;
+    line-height: 2; /* Khoảng cách giữa các dòng */
+}
+
+p {
+    margin: 5px 0 15px;
+    line-height: 2; /* Điều chỉnh giãn cách dòng cho đoạn văn trong header */
+}
+
+h2 {
+    text-align: center; 
+    margin: 20px 0; /* Tùy chọn: Thêm khoảng cách trên và dưới */
+    font-size: 2em; 
+    color: #333; 
+}
+
+/* Định kiểu cho banner */
+.banner {
+    background-image:url(banner.jpg) ; 
+    color: white; 
+    text-align: center; 
+    font-size: 3em; /* Tăng kích thước chữ */
+    font-weight: bold; /* Làm đậm chữ */
+    padding: 20px 0; /* Tăng khoảng cách trên/dưới của banner */
+    margin: 0; /* Loại bỏ khoảng cách bên ngoài */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+/* Định dạng cho đoạn văn bên dưới banner */
+header p {
+    text-align: center;
+    font-size: 1.2em;
+    color: #ffffff;
+    margin-top: 10px;
+}
+
+/* Các ảnh trong các mục của trang chủ */
+.homepage .category-item img {
+    width: 100%; 
+    height: 350px; 
+    object-fit: cover; /* Đảm bảo ảnh không bị méo và cắt bớt phần thừa nếu cần */
+    margin: 0 auto; /* Căn giữa ảnh */
+}
+
+/* Đảm bảo các ảnh trong gallery của trang chủ có kích thước đồng đều */
+.homepage .gallery .image img {
+    width: 100%; 
+    height: 350px; 
+    object-fit: cover; /* Cắt ảnh cho phù hợp */
+}
+
+/* Điều chỉnh header của trang chủ */
+.homepage header {
+    padding: 10px 0; /* Giảm padding để header nhỏ hơn */
+    font-size: 0.9em;
+    background-color: #333;
+}
+
+.homepage header h1 {
+    font-size: 2em; /* Nhỏ hơn header của các trang khác */
+    line-height: 1.2;
+}
+
+.homepage header p {
+    font-size: 1.5em;
+    margin-top: 5px;
+    color: white;
+}
+
+/* Navbar */
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+}
+
+.navbar ul li {
+    display: inline;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1em;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.navbar ul li a:hover {
+    background-color: #555;
+}
+
+/* Main */
+main {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Section các mục */
+.categories {
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+}
+
+.categories h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Danh sách các mục */
+.category-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Từng mục */
+.category-item {
+    text-align: center;
+    width: 250px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    background-color: #fff;
+}
+
+.category-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.category-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.category-item h3 {
+    margin: 10px 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.category-item a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Masonry Layout cho Gallery */
+.gallery {
+    column-count: 3; 
+    column-gap: 20px; /* Khoảng cách giữa các cột */
+    width: 100%;
+}
+
+.image {
+    margin-bottom: 20px;
+    break-inside: avoid; /* Đảm bảo hình không bị cắt */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.image:hover {
+    transform: translateY(-5px);
+}
+
+.image img {
+    width: 250px;
+    display: block;
+    height: auto;
+}
+
+.image p {
+    padding: 10px;
+    text-align: center;
+    font-size: 0.9em;
+    color: #555;
+}
+
+/* Bo góc cho các hình ảnh trong tất cả các trang */
+.category-item img, .gallery .image img {
+    border-radius: 10px; 
+    overflow: hidden; /* Giới hạn phần ảnh thừa nếu cần */
+}
+
+/* Bo góc cho các ô chứa ảnh */
+.category-item {
+    border-radius: 10px; 
+    overflow: hidden; /* Đảm bảo ảnh không bị tràn ra ngoài góc bo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+/* Bo góc cho ảnh trong các ô */
+.category-item img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; /* Cắt ảnh để giữ tỷ lệ đúng */
+    border-radius: 10px; 
+}
+
+/* Bo góc cho các ảnh trong gallery */
+.homepage .gallery .image {
+    border-radius: 15px; 
+    overflow: hidden; /* Đảm bảo ảnh không bị tràn ra ngoài */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.homepage .gallery .image img {
+    width: 100%; 
+    height: 200px; 
+    object-fit: cover; /* Giữ tỷ lệ ảnh và cắt bớt nếu cần */
+    border-radius: 10px; 
+}
+
+/* Responsive Layout */
+@media screen and (max-width: 768px) {
+    .gallery {
+        column-count: 2; /* Giảm số cột khi màn hình nhỏ hơn 768px*/
+    }
+
+    .category-list {
+        flex-direction: column; /* Cột dọc trên thiết bị nhỏ */
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .gallery {
+        column-count: 2; 
+    }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #333;
+    color: white;
+}
+
+/*ẩn mục*/
+.category-item.hide {
+    display: none;
+}
